@@ -9,7 +9,7 @@ function adicionar() {
         return;
     }
 
-    if (amigos.includes(nomeAmigo.value)){
+    if (amigos.includes(nomeAmigo.value.toLowerCase())){
         alert("Este nome já foi inserido. Insira um nome diferente.");
         return;
     } else {
@@ -29,10 +29,10 @@ function sortear() {
     if (amigos.length < 3) {
         alert("É necessário ter pelo menos três amigos para realizar o sorteio.");
         return;
-    } else {
-        embaralha(amigos);
-    }   
-
+    }    
+    
+    embaralha(amigos);
+   
     let listaSorteio = document.getElementById("lista-sorteio");
 
     for (let i = 0; i < amigos.length; i++) {
