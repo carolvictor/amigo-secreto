@@ -26,19 +26,24 @@ function adicionar() {
 }
 
 function sortear() {
-           embaralha(amigos);
-   
-        let listaSorteio = document.getElementById("lista-sorteio");
+    if (amigos.length < 3) {
+        alert("É necessário ter pelo menos três amigos para realizar o sorteio.");
+        return;
+    } else {
+        embaralha(amigos);
+    }   
 
-        for (let i = 0; i < amigos.length; i++) {
+    let listaSorteio = document.getElementById("lista-sorteio");
 
-            if(i == amigos.length - 1){ //que significa que o indice chegou no final do array
-                listaSorteio.innerHTML = listaSorteio.innerHTML + amigos[i] + "--> " + amigos[0] + "<br>";
-            } else {
-                listaSorteio.innerHTML = listaSorteio.innerHTML + amigos[i] + "--> " + amigos[i+1] + "<br>";
-            //amigos[i+1] é o amigo que está na próxima posição
-            //<br> para ir para a linha abaixo no html
-            }      
+    for (let i = 0; i < amigos.length; i++) {
+
+        if(i == amigos.length - 1){ //que significa que o indice chegou no final do array
+            listaSorteio.innerHTML = listaSorteio.innerHTML + amigos[i] + "--> " + amigos[0] + "<br>";
+        } else {
+            listaSorteio.innerHTML = listaSorteio.innerHTML + amigos[i] + "--> " + amigos[i+1] + "<br>";
+        //amigos[i+1] é o amigo que está na próxima posição
+        //<br> para ir para a linha abaixo no html
+        }      
     }    
 }
 
